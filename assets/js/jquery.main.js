@@ -40,7 +40,7 @@
 
         // sticky header setup (only for home page)
         // the below didn't work on GitHub Pages not published yet...
-        if (['/', '/index', '/index.html', '/www.kricspartywall.com/', '/stage.kricspartywall.com/'].includes(window.location.pathname)) {
+        if (['/', '/index', '/index.html', '/www.kricspartywall.com/', '/www.kricspartywall.com/index.html', '/stage.kricspartywall.com/', '/stage.kricspartywall.com/index.html'].includes(window.location.pathname)) {
             $win.scroll(function () {
                 if ($(this).scrollTop() > 42) {
                     $('#WebDev-main-header').addClass("sticky-nav");
