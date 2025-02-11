@@ -58,7 +58,7 @@
     <div id="wrapper" class="no-overflow-x">
         <div class="page-wrapper">
             <!-- header of the page -->
-            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.url != '/' %} sticky-nav{% endif %}" id="WebDev-main-header">
+            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.permalink != '/' %} sticky-nav{% endif %}" id="WebDev-main-header">
                 <!-- <header class="fixed-top main-header header-white transparent with-side-panel-ico sticky-nav" id="WebDev-main-header"> -->
                 <div id="nav-section">
                     <div class="bottom-header container-fluid mega-menus" id="mega-menus">
@@ -108,7 +108,6 @@
                 </div>
             </header>
             <!--/header of the page -->
-            {{ page.url }}
             <main>
                 {{ content }}
             </main>
