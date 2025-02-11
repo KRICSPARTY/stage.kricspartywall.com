@@ -1,0 +1,79 @@
+---
+layout: default
+title: Contact Us
+permalink: /contact
+---
+
+<main class="no-banner">
+    <!-- visual/banner of the page -->
+    {% include page-banner.html %}
+    <!--/visual/banner of the page -->
+
+    <!-- main content wrapper -->
+    <div class="content-wrapper">
+        <section class="content-block pb-0">
+            <div class="container">
+                <div class="contact-container">
+                    <h6 class="content-title contact-title">GET IN TOUCH WITH US</h6>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- contact form -->
+                            <form action="#" method="post" id="contact_form" class="WebDev_contact-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="FIRST NAME *" id="con_fname" name="con_fname" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="LAST NAME *" id="con_lname" name="con_lname" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="tel" placeholder="PHONE NUMBER" id="con_phone" name="con_phone" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" placeholder="EMAIL ADDRESS *" id="con_email" name="con_email" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="MESSAGE *" id="con_message" name="con_message"></textarea>
+                                </div>
+                                <div class="btn-container">
+                                    <button id="btn_sent" class="btn btn-primary btn-arrow">SEND MESSAGE</button>
+                                    <p id="error_message"> </p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6 col-xl-5 offset-xl-1">
+                            <div class="info-slot">
+                                <div class="icon"><span class="custom-icon-map-marker"></span></div>
+                                <div class="text">
+                                    <address>KRICS Party Wall Surveyors LTD.
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="info-slot">
+                                <div class="icon"><span class="custom-icon-message"></span></div>
+                                <div class="text">
+                                    <ul class="content-list contact-list">
+                                        <li>07984449085</li>
+                                        <li><a href="mailto:info@kricspartywall.com">info@kricspartywall.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--/main content wrapper -->
+</main>

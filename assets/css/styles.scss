@@ -1,0 +1,156 @@
+---
+---
+
+body {
+  background-color: #212121;
+}
+
+// <!-- main wrapper -->
+#wrapper {
+  background-color: white;
+}
+
+.logo {
+  height: 70px;
+}
+
+.theme-bg {
+  background-color: #995929;
+}
+.theme-color {
+  color: #995929;
+}
+
+
+/************* Main Navigation - Start ************/
+.main-header .navbar .navbar-nav li {
+	font-size: .85rem;
+}
+
+@media only screen and (max-width: 991px) {
+  .main-header .navbar .navbar-nav li {
+		font-size: .75rem;
+	}
+}
+
+/************* Main Navigation - Finish ************/
+
+
+/************* Home - Start ************/
+.btn.btn-primary.btn-slider:hover {
+  background-color: #995929;
+}
+
+.home-banner-content {
+  h2,h3 {
+    color: white;
+    line-height: 36px;
+    font-size: 36px !important;
+  }
+  ul {
+    list-style: none;
+    padding: 0 0 0 96px;
+    margin: 0;
+    li {
+      position: relative;
+      letter-spacing: 2px !important;
+      margin-bottom: 16px !important;
+      &:before {
+        content: '\f25a';
+        font-family: "Font Awesome 6 Free";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        font-size: 20px;
+        width: 32px;
+        height: 32px;
+        color: #995929;
+        background-color: white;
+        border-radius: 50%;
+        margin: -15px 0 0 -42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation: tilt-shaking 0.25s infinite;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .home-banner-content {
+    h2,h3 {
+      line-height: 24px !important;
+      font-size: 24px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .home-banner-content {
+    h2,h3 {
+      line-height: 20px !important;
+      font-size: 20px !important;
+    }
+  }
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(90deg); }
+  25% { transform: rotate(100deg); }
+  50% { transform: rotate(90eg); }
+  75% { transform: rotate(80deg); }
+  100% { transform: rotate(90deg); }
+}
+
+.section-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.why-choose-us-block {
+	background-image: url('../images/background-1.jpg');
+
+  .why-topic {
+    > div {
+      padding: 4rem 1rem 0 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+    i {
+      font-size: 42px;
+      margin-bottom: 1rem;
+    }
+    span {
+        display: block;
+    }
+  }
+}
+/************* Home - Finish ************/
+
+
+/************* 404 - Start ************/
+#handboy   { transform-box: fill-box; transform-origin: 98% 98%; animation: swing ease-in-out 1.3s infinite alternate; }
+#girllight { transform-box: fill-box; transform-origin:  0% 97%; animation: swing ease-in-out 1.3s infinite alternate; }
+#hairgirl  { transform-box: fill-box; transform-origin: 60%  0%; animation: swinghair ease-in-out 1.3s infinite alternate; }
+#zero      { transform-box: fill-box; transform-origin: bottom; }
+
+// swing
+@keyframes swing {
+  0% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+// swing hair
+@keyframes swinghair {
+  0% { transform: rotate(6deg); }
+  100% { transform: rotate(-6deg); }
+}
+/************* 404 - Finish ************/
