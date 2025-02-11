@@ -57,8 +57,9 @@
     <!-- main wrapper -->
     <div id="wrapper" class="no-overflow-x">
         <div class="page-wrapper">
+            <div class="text-center {% if page.url == '/' %} sticky-nav1{% else %} sticky-nav{% endif %}">Sample Place Holder : #{{page.url}}#</div>
             <!-- header of the page -->
-            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.permalink != '/' %} sticky-nav{% endif %}" id="WebDev-main-header">
+            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.url != '/' %} sticky-nav{% endif %}" id="WebDev-main-header">
                 <!-- <header class="fixed-top main-header header-white transparent with-side-panel-ico sticky-nav" id="WebDev-main-header"> -->
                 <div id="nav-section">
                     <div class="bottom-header container-fluid mega-menus" id="mega-menus">
@@ -184,6 +185,7 @@
         <!--/footer of the page -->
     </div>
     <!-- open/close -->
+    <!--
     <div class="search-form-wrapper overlay overlay-hugeinc">
         <button type="button" class="overlay-close"><span class="custom-icon-plus"></span></button>
         <div class="search-form">
@@ -195,6 +197,7 @@
             </form>
         </div>
     </div>
+    -->
     <a href="#" class="section-scroll" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- jQuery -->
