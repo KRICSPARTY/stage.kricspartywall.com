@@ -59,7 +59,7 @@
         <div class="page-wrapper">
             <div class="text-center {% if page.url == '/' %} sticky-nav1{% else %} sticky-nav{% endif %}">Sample Place Holder : #{{page.url}}#</div>
             <!-- header of the page -->
-            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.url != '/' %} sticky-nav{% endif %}" id="WebDev-main-header">
+            <header class="fixed-top main-header header-white transparent with-side-panel-ico{% if page.url == '/' %}{% else %} sticky-nav{% endif %}" id="WebDev-main-header">
                 <!-- <header class="fixed-top main-header header-white transparent with-side-panel-ico sticky-nav" id="WebDev-main-header"> -->
                 <div id="nav-section">
                     <div class="bottom-header container-fluid mega-menus" id="mega-menus">
