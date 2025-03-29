@@ -137,6 +137,25 @@ body {
 /************* Home - Finish ************/
 
 
+/************* Home - Services - Start ************/
+.ico-box {
+  cursor: pointer;
+}
+
+.ico-box:hover {
+    border: solid 1px #995929;
+}
+
+.ico-box:hover .icon a, .ico-box:hover .content-title a {
+  color: #995929;
+}
+
+.ico-box:hover .icon, .ico-box:hover .content-title {
+  color: #995929;
+}
+/************* Home - Services - Finish ************/
+
+
 /************* 404 - Start ************/
 #handboy   { transform-box: fill-box; transform-origin: 98% 98%; animation: swing ease-in-out 1.3s infinite alternate; }
 #girllight { transform-box: fill-box; transform-origin:  0% 97%; animation: swing ease-in-out 1.3s infinite alternate; }
