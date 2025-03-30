@@ -4,6 +4,7 @@
 
 body {
   background-color: #212121;
+  color: black;
 }
 
 // <!-- main wrapper -->
@@ -22,6 +23,14 @@ body {
   color: #995929;
 }
 
+.hidden { 
+  display: none;
+}
+
+.span-highlight {
+  color: #995929;
+  font-weight: 500;
+}
 
 /************* Main Navigation - Start ************/
 .main-header .navbar .navbar-nav li {
@@ -174,3 +183,30 @@ body {
   100% { transform: rotate(-6deg); }
 }
 /************* 404 - Finish ************/
+
+
+/************* svg-icon - Start ************/
+.svg-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  .svg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+
+    &:first-of-type {
+      z-index: 2;
+    }
+  }
+}
+
+.ico-box:hover .svg-icon .svg-image:first-of-type {
+  z-index: 0;
+}
+/************* svg-icon - Finish ************/
