@@ -32,6 +32,18 @@ body {
   font-weight: 500;
 }
 
+.btn-main {
+  color: white;
+  background-color: #995929;
+  border-color: #000000;
+
+  &:hover {
+    color: white;
+    background-color: #000000;
+    border-color: #995929;
+  }
+}
+
 /************* Main Navigation - Start ************/
 .main-header .navbar .navbar-nav li {
 	font-size: .85rem;
