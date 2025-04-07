@@ -8,20 +8,31 @@ custom_script: |
             // console.log('jQuery is available');
 
             $('#contact_form').on('submit', function(e) {
-                e.preventDefault(); // Prevent default form submission
+                e.preventDefault();
+                var href = $(this).attr("action");
                 var formData = $(this).serialize(); // Serialize the form data
 
                 $.ajax({
-                    method: 'POST',
-                    url: 'https://formsubmit.co/sumeet@upvision.in', // Endpoint for form submission
-                    data: formData, // Send serialized form data
+                    type: 'POST',
+                    dataType: 'json',
+                    url: href,
+                    data: $(this).serialize(),
                     success: (response) => {
-                        console.log('Form submitted successfully:', response);
-                        // Optionally, redirect or show a success message
+                        if (response.status == "success") {
+                            var currentUrl = window.location.href;
+                            var baseUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/'));  // Remove the current page's file name
+
+                            console.log('Form submitted successfully:', response);
+                            console.log('Redirecting to :', baseUrl + '/thanks');
+
+                            window.location.href = baseUrl + '/thanks';
+                        }
+                        else {
+                            $('#contact_form_error').text('Something went wrong while submitting the form! Please try again later. ' + response.message).removeClass('d-none');
+                        }
                     },
                     error: (err) => {
-                        console.log('Error in form submission:', err);
-                        // Optionally, handle the error (e.g., show an error message)
+                        $('#contact_form_error').text('Something went wrong! Please try again later. ' + err).removeClass('d-none');
                     }
                 });
             });
@@ -58,44 +69,8 @@ custom_script: |
                         </div>
                         <div class="col-lg-5 offset-lg-2 col-xl-5 offset-xl-2">
                             <h4 class="xs-padding-top">Send a message to us</h4>
-                            <!-- contact form -->
-                            <!--
-                            <form action="#" method="post" id="contact_form" class="WebDev_contact-form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="FIRST NAME *" id="con_fname" name="con_fname" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="LAST NAME *" id="con_lname" name="con_lname" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="tel" placeholder="PHONE NUMBER" id="con_phone" name="con_phone" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" placeholder="EMAIL ADDRESS *" id="con_email" name="con_email" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="MESSAGE *" id="con_message" name="con_message"></textarea>
-                                </div>
-                                <div class="btn-container">
-                                    <button id="btn_sent" class="btn btn-primary btn-arrow">SEND MESSAGE</button>
-                                    <p id="error_message"> </p>
-                                </div>
-                            </form>
-                            -->
 
-                            <form method="post" id="contact_form" class="WebDev_contact-form">
+                            <form method="POST" id="contact_form" class="WebDev_contact-form" action="https://formcarry.com/s/ze5IH9eLtSD">
                                 <div class="form-group">
                                     <input type="text" name="name" class="form-control" placeholder="NAME *" required>
                                 </div>
@@ -109,19 +84,18 @@ custom_script: |
                                     <textarea class="form-control" name="message" placeholder="MESSAGE *" required></textarea>
                                 </div>
                                 <div class="btn-container">
-                                    <input type="hidden" name="_next" value="https://kricspartywall.com/thanks.html">
-                                    <input type="hidden" name="_subject" value="New contact request from kricspartywall.com!">
-                                    <input type="hidden" name="_captcha" value="false">
-                                    <input type="hidden" name="_template" value="table">
-
                                     <button type="submit" class="btn btn-trans-black has-radius-small btn-arrow">SEND MESSAGE</button>
                                 </div>
                             </form>
+							
+							<div class="alert alert-danger" role="alert" id="contact_form_error">
+							  Something went wrong! Please try again later.
+							</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
     <!--/main content wrapper -->
+    </div>
 </main>
