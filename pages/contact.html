@@ -2,6 +2,31 @@
 layout: default
 title: Contact Us
 permalink: /contact
+custom_script: |
+    <script>
+        if (typeof jQuery !== 'undefined') {
+            // console.log('jQuery is available');
+
+            $('#contact_form').on('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                var formData = $(this).serialize(); // Serialize the form data
+
+                $.ajax({
+                    method: 'POST',
+                    url: 'https://formsubmit.co/sumeet@upvision.in', // Endpoint for form submission
+                    data: formData, // Send serialized form data
+                    success: (response) => {
+                        console.log('Form submitted successfully:', response);
+                        // Optionally, redirect or show a success message
+                    },
+                    error: (err) => {
+                        console.log('Error in form submission:', err);
+                        // Optionally, handle the error (e.g., show an error message)
+                    }
+                });
+            });
+        }
+    </script>
 ---
 
 <main class="no-banner">
@@ -16,7 +41,23 @@ permalink: /contact
                 <div class="contact-container">
                     <!--<h6 class="content-title contact-title">GET IN TOUCH WITH US</h6>-->
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-5 col-xl-5">
+                            <h4>KRICS Party Wall Surveyors LTD</h4>
+                            <div class="info-slot">
+                                <div class="icon"><span class="custom-icon-phone"></span></div>
+                                <div class="text">
+                                    <a class="text-black" href="tel:07984449085">Call us at <b>07984449085</b></a>
+                                </div>
+                            </div>
+                            <div class="info-slot">
+                                <div class="icon"><span class="custom-icon-message"></span></div>
+                                <div class="text">
+                                    <a class="text-black" href="mailto:info@kricspartywall.com">Email us at <b>info@kricspartywall.com</b></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 offset-lg-2 col-xl-5 offset-xl-2">
+                            <h4 class="xs-padding-top">Send a message to us</h4>
                             <!-- contact form -->
                             <!--
                             <form action="#" method="post" id="contact_form" class="WebDev_contact-form">
@@ -54,69 +95,28 @@ permalink: /contact
                             </form>
                             -->
 
-                            <form action="https://formsubmit.co/sumeet@upvision.in" method="post" id="contact_form" class="WebDev_contact-form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" id="name" name="name" class="form-control" placeholder="NAME *" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="PHONE NUMBER" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" id="email" name="email" class="form-control" placeholder="EMAIL ADDRESS *" required>
-                                        </div>
-                                    </div>
+                            <form method="post" id="contact_form" class="WebDev_contact-form">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="NAME *" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="message" name="message" placeholder="MESSAGE *" required></textarea>
+                                    <input type="tel" name="phone" class="form-control" placeholder="PHONE NUMBER *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="EMAIL ADDRESS *" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" placeholder="MESSAGE *" required></textarea>
                                 </div>
                                 <div class="btn-container">
                                     <input type="hidden" name="_next" value="https://kricspartywall.com/thanks.html">
                                     <input type="hidden" name="_subject" value="New contact request from kricspartywall.com!">
+                                    <input type="hidden" name="_captcha" value="false">
                                     <input type="hidden" name="_template" value="table">
 
                                     <button type="submit" class="btn btn-trans-black has-radius-small btn-arrow">SEND MESSAGE</button>
                                 </div>
                             </form>
-                            <script type="javascript">
-                                $.ajax({
-                                    method: 'POST',
-                                    url: 'https://formsubmit.co/ajax/your@email.com',
-                                    dataType: 'json',
-                                    accepts: 'application/json',
-                                    data: {
-                                        name: "FormSubmit",
-                                        message: "I'm from Devro LABS"
-                                    },
-                                    success: (data) => console.log(data),
-                                    error: (err) => console.log(err)
-                                });
-                            </script>
-                        </div>
-                        <div class="col-lg-6 col-xl-5 offset-xl-1">
-                            <div class="info-slot">
-                                <div class="icon"><span class="custom-icon-map-marker"></span></div>
-                                <div class="text">
-                                    <address>KRICS Party Wall Surveyors LTD.
-                                    </address>
-                                </div>
-                            </div>
-                            <div class="info-slot">
-                                <div class="icon"><span class="custom-icon-message"></span></div>
-                                <div class="text">
-                                    <ul class="content-list contact-list">
-                                        <li>07984449085</li>
-                                        <li><a href="mailto:info@kricspartywall.com">info@kricspartywall.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
